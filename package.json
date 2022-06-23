@@ -1,0 +1,31 @@
+{
+  "name": "turborepo",
+  "description": "A monorepo fro whatever with turborepo.",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Omar Eloui <omareloui@hotmail.com>",
+  "license": "MIT",
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@7.3.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "turbo run start",
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "client:dev": "turbo run client#dev --parallel",
+    "lint": "turbo run lint",
+    "client:lint": "turbo run client#lint",
+    "api:lint": "turbo run api#lint",
+    "format": "prettier --write \"{,!(node_modules|.nuxt|.output)/**/}*.{ts,tsx,md,json}\""
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "turbo": "latest"
+  }
+}
